@@ -11,7 +11,6 @@ private:
 public:
   ScaleClass(int doutPin, int clkPin, float calFactor);
   void initialize();
-  bool checkSensor();
   float getWeight();
 };
 

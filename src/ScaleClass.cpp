@@ -13,10 +13,6 @@ void ScaleClass::initialize()
 float ScaleClass::getWeight()
 {
   scale.set_scale(calibration_factor);
-  int GRAM = scale.get_units(), 4;
-  return GRAM
-}
-
-bool ScaleClass::checkSensor()
-{
+  int GRAM = scale.get_units();
+  return GRAM;
 }
