@@ -14,7 +14,6 @@ private:
 public:
   DS18B20Sensor(int pin);
   void initialize();
-  bool checkSensor();
   float getValue();
 };
 

@@ -17,8 +17,3 @@ float DS18B20Sensor::getValue()
 
   return temperatureCelsius;
 }
-
-bool DS18B20Sensor::checkSensor()
-{
-  return sensors.isConnected();
-}
