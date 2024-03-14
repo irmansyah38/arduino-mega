@@ -7,14 +7,14 @@
 class DS18B20Sensor
 {
 private:
+  const int ONE_WIRE_BUS;
   OneWire oneWire;
   DallasTemperature sensors;
-  DeviceAddress sensorAddress;
 
 public:
   DS18B20Sensor(int pin);
-  void initialize();
-  float getValue();
+  void begin();
+  float getTemperature();
 };
 
 #endif

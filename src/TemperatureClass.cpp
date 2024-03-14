@@ -1,19 +1,14 @@
 #include "TemperatureClass.h"
-DS18B20Sensor ::DS18B20Sensor(int pin) : oneWire(pin), sensors(&oneWire)
-{
-}
-void DS18B20Sensor::initialize()
+DS18B20Sensor ::DS18B20Sensor(int pin) : ONE_WIRE_BUS(pin), oneWire(ONE_WIRE_BUS), sensors(&oneWire) {}
+
+void DS18B20Sensor::begin()
 {
   sensors.begin();
 }
 
-float DS18B20Sensor::getValue()
+float DS18B20Sensor::getTemperature()
 {
-  // Minta pembacaan suhu
   sensors.requestTemperatures();
-
-  // Baca suhu dalam Celsius
-  float temperatureCelsius = sensors.getTempC(sensorAddress);
-
-  return temperatureCelsius;
+  float temperatureC = sensors.getTempCByIndex(0);
+  return temperatureC;
 }
